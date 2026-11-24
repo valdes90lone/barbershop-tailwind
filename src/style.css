@@ -20,7 +20,6 @@
 }
 
 @theme {
-
   /* Fonts */
   --font-body: "Montserrat", sans-serif;
   --font-display: "Chakra Petch", sans-serif;
@@ -59,7 +58,6 @@
   --breakpoint-lg: 71.875rem;
   --breakpoint-2xl: 128rem;
 }
-
 
 @plugin "daisyui/theme" {
   name: "barbershop";
@@ -100,7 +98,6 @@
   --noise: 0;
 }
 
-
 /* =========================================
    5. GLOBAL VARIABLES
 ========================================= */
@@ -116,7 +113,6 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
-
 
 /* =========================================
    6. RESPONSIVE TYPOGRAPHY
@@ -135,7 +131,6 @@
   }
 }
 
-
 /* =========================================
    7. BASE STYLES
 ========================================= */
@@ -152,14 +147,16 @@
     color: var(--color-body-text);
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: var(--font-bold);
     line-height: 1.2;
     color: var(--color-title);
   }
 }
-
 
 @utility container {
   width: calc(100% - 2rem);
@@ -175,16 +172,44 @@
   text-align: center;
   font-size: var(--text-big);
   margin-bottom: 1.5rem;
-  
 }
 
 @utility page-main {
   overflow: hidden;
 }
 
-
 @media (width >= 71.875rem) {
   .section {
     padding-block: 7rem 5rem;
   }
+}
+
+
+/* ================= WORK SWIPER ================= */
+
+#work-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#work-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  border-radius: 999px;
+  background-color: currentColor;
+  opacity: 0.35;
+  transition: all 0.3s ease;
+}
+
+#work-pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  opacity: 1;
+}
+
+#work-prev.swiper-button-disabled,
+#work-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }

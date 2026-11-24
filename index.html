@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
       content="Professional barbershop specializing in modern and classic haircuts, fades, and beard trims."
     />
+
     <link
       rel="shortcut icon"
       href="/assets/img/favicon.png"
       type="image/x-icon"
     />
+
     <title>Professional Barber Shop</title>
   </head>
 
@@ -20,7 +23,7 @@
 
     <header
       id="header"
-      class="fixed inset-x-0 top-0 z-100 bg-transparent transition-all duration-400"
+      class="fixed inset-x-0 top-0 z-[100] bg-transparent transition-all duration-[400ms]"
     >
       <nav
         class="container mx-auto flex h-14 items-center justify-between lg:h-22"
@@ -37,13 +40,13 @@
         <!-- Navigation -->
         <div
           id="nav-menu"
-          class="fixed right-0 top-0 z-101 h-dvh w-75 translate-x-full bg-white px-8 pt-28 shadow-2xl transition-transform duration-400 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+          class="fixed right-0 top-0 z-[101] h-dvh w-75 translate-x-full bg-white px-8 pt-28 shadow-2xl transition-transform duration-[400ms] lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent lg:p-0 lg:shadow-none"
         >
           <ul
             class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12"
             id="nav-links"
           >
-            <!-- Les liens sont générés dans le JS-->
+            <!-- Les liens sont générés en JavaScript -->
           </ul>
 
           <!-- Close menu -->
@@ -53,7 +56,7 @@
             aria-label="Close navigation"
             class="absolute right-6 top-5 text-2xl text-title transition-colors hover:text-primary lg:hidden"
           >
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -66,7 +69,7 @@
           aria-controls="nav-menu"
           class="text-2xl text-white transition-colors hover:text-primary lg:hidden"
         >
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
       </nav>
     </header>
@@ -78,7 +81,7 @@
 
       <section
         id="home"
-        class="relative flex min-h-200 items-center justify-center overflow-hidden lg:h-217.5"
+        class="relative flex min-h-[50rem] items-center justify-center overflow-hidden lg:min-h-[54.375rem]"
       >
         <!-- Background image -->
         <img
@@ -130,21 +133,27 @@
               class="btn btn-primary border-0 px-8 text-base font-semibold text-title hover:-translate-y-1 hover:bg-brand-orange-alt"
             >
               See Our Haircut Work
-              <i class="fa-solid fa-arrow-right ml-2"></i>
+              <i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </section>
 
+      <!-- ================= ABOUT ================= -->
+
       <section class="section bg-brown" id="about">
         <div
-          class="container text-white lg:grid-cols-2 lg:justify-center lg:items-center md:grid grid-cols-[400px] md:justify-center md:items-center lg:gap-30"
+          class="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center lg:gap-16"
         >
-          <div class="flex flex-col gap-4">
-            <h2 class="section-title text-white lg:text-left uppercase">
+          <!-- About content -->
+          <div class="flex flex-col gap-8 text-white">
+            <h2
+              class="section-title text-biggest text-white uppercase lg:text-left"
+            >
               More Than <br />
               Just a Haircut
             </h2>
+
             <p class="text-center lg:text-left">
               At BARBERSHOP, we believe that a great haircut is more than just a
               style. It's a statement of confidence, personality, and
@@ -153,37 +162,127 @@
               experiences. From classic cuts to contemporary fades, we take
               pride in every detail.
             </p>
+
+            <!-- Advantages -->
             <div
-              class="flex justify-center items-center lg:flex lg:justify-start gap-15"
+              class="grid grid-cols-2 place-items-center gap-3 lg:place-items-start"
+            >
+              <span class="badge badge-primary"> Professional Barbers </span>
+
+              <span class="badge badge-neutral"> Premium Products </span>
+
+              <span class="badge badge-outline"> Personalized Service </span>
+
+              <span class="badge badge-dash"> Attention to Detail </span>
+            </div>
+
+            <!-- Statistics -->
+            <div
+              class="flex items-center justify-center gap-15 lg:justify-start"
             >
               <div class="text-primary">
-                <span class="font-display text-big font-semibold"
-                  >99 <span>%</span>
+                <span class="font-display text-big font-semibold">
+                  99<span>%</span>
                 </span>
-                <p class="font-semibold text-white text-sm">
+
+                <p class="text-sm font-semibold text-white">
                   CUSTOMER <br />
                   SATISFACTION
                 </p>
               </div>
+
               <div class="text-primary">
-                <span class="font-display text-big font-semibold"
-                  >7 <span>+</span>
+                <span class="font-display text-big font-semibold">
+                  7<span>+</span>
                 </span>
-                <p class="font-semibold text-sm text-white">
-                  YEAR OF <br />
+
+                <p class="text-sm font-semibold text-white">
+                  YEARS OF <br />
                   EXPERIENCE
                 </p>
               </div>
             </div>
           </div>
 
+          <!-- About image -->
           <img
             src="/assets/img/about-img.png"
-            class="w-[320px] rounded-2xl justify-self-center my-10 lg:-order-1 lg:w-125"
-            alt=""
+            alt="Professional barber working in the BARBERSHOP salon"
+            loading="lazy"
+            class="my-5 w-80 justify-self-center rounded-2xl object-cover md:order-first lg:w-full"
           />
         </div>
       </section>
+
+      <!-- ================= OUR WORK ================= -->
+
+      <section class="section bg-beige" id="work">
+        <div class="container mx-auto">
+          <!-- Section heading and controls -->
+          <div class="work__data mb-10">
+            <h2
+              class="section-title text-big text-title uppercase lg:text-left"
+            >
+              DISCOVER <br />
+              OUR WORKS
+            </h2>
+
+            <p class="max-w-xl text-center text-title lg:text-left">
+              Our work includes both vintage and modern styles. We stay
+              up-to-date with the latest trends to guarantee the best possible
+              service.
+            </p>
+
+            <!-- Swiper controls -->
+            <div class="mt-8 flex items-center justify-between">
+              <!-- Pagination -->
+              <div
+                class="swiper-pagination !static !w-auto"
+                id="work-pagination"
+              ></div>
+
+              <!-- Navigation arrows -->
+              <div class="flex items-center gap-3">
+                <button
+                  type="button"
+                  class="swiper-button-prev static! !m-0 !flex !h-11 !w-11 items-center justify-center rounded-full border border-title text-title after:!hidden hover:bg-title hover:text-white"
+                  id="work-prev"
+                  aria-label="Previous haircut"
+                >
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="swiper-button-next !static !m-0 !flex !h-11 !w-11 items-center justify-center rounded-full border border-title text-title after:!hidden hover:bg-title hover:text-white"
+                  id="work-next"
+                  aria-label="Next haircut"
+                >
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper container -->
+          <div class="work__swiper swiper overflow-hidden">
+            <!-- Slides will be generated here -->
+            <div class="swiper-wrapper"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template placed outside the Swiper wrapper -->
+      <template id="slide-exemple">
+        <article class="swiper-slide overflow-hidden rounded-2xl">
+          <img
+            src=""
+            alt=""
+            loading="lazy"
+            class="h-[380px] w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </article>
+      </template>
 
       <!-- Other sections will be added here -->
     </main>
