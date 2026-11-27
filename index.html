@@ -143,7 +143,7 @@
 
       <section class="section bg-brown" id="about">
         <div
-          class="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center lg:gap-16"
+          class="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-[450px] lg:grid-cols-2 md:items-center md:justify-center lg:gap-16"
         >
           <!-- About content -->
           <div class="flex flex-col gap-8 text-white">
@@ -209,64 +209,43 @@
             src="/assets/img/about-img.png"
             alt="Professional barber working in the BARBERSHOP salon"
             loading="lazy"
-            class="my-5 w-80 justify-self-center rounded-2xl object-cover md:order-first lg:w-full"
+            class="my-5 w-80 justify-self-center rounded-2xl object-cover lg:order-first lg:w-full"
           />
         </div>
       </section>
 
       <!-- ================= OUR WORK ================= -->
 
-      <section class="section bg-beige" id="work">
-        <div class="container mx-auto">
-          <!-- Section heading and controls -->
-          <div class="work__data mb-10">
-            <h2
-              class="section-title text-big text-title uppercase lg:text-left"
-            >
+      <section class="work section bg-beige" id="work">
+        <div
+          class="work__container container mx-auto grid gap-16 lg:grid-cols-[300px_740px] lg:items-center"
+        >
+          <div
+            class="work__data relative pb-28 w-auto text-center lg:text-left"
+          >
+            <h2 class="section-title lg:text-left">
               DISCOVER <br />
               OUR WORKS
             </h2>
 
-            <p class="max-w-xl text-center text-title lg:text-left">
+            <p class="text-title">
               Our work includes both vintage and modern styles. We stay
               up-to-date with the latest trends to guarantee the best possible
               service.
             </p>
 
-            <!-- Swiper controls -->
-            <div class="mt-8 flex items-center justify-between">
-              <!-- Pagination -->
-              <div
-                class="swiper-pagination !static !w-auto"
-                id="work-pagination"
-              ></div>
+            <div class="swiper-pagination lg:text-left"></div>
 
-              <!-- Navigation arrows -->
-              <div class="flex items-center gap-3">
-                <button
-                  type="button"
-                  class="swiper-button-prev static! !m-0 !flex !h-11 !w-11 items-center justify-center rounded-full border border-title text-title after:!hidden hover:bg-title hover:text-white"
-                  id="work-prev"
-                  aria-label="Previous haircut"
-                >
-                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                </button>
+            <div class="swiper-button-prev">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
 
-                <button
-                  type="button"
-                  class="swiper-button-next !static !m-0 !flex !h-11 !w-11 items-center justify-center rounded-full border border-title text-title after:!hidden hover:bg-title hover:text-white"
-                  id="work-next"
-                  aria-label="Next haircut"
-                >
-                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                </button>
-              </div>
+            <div class="swiper-button-next">
+              <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
 
-          <!-- Swiper container -->
-          <div class="work__swiper swiper overflow-hidden">
-            <!-- Slides will be generated here -->
+          <div class="work__swiper swiper w-full">
             <div class="swiper-wrapper"></div>
           </div>
         </div>
@@ -274,18 +253,333 @@
 
       <!-- Template placed outside the Swiper wrapper -->
       <template id="slide-exemple">
-        <article class="swiper-slide overflow-hidden rounded-2xl">
+        <article class="swiper-slide !w-[250px] lg:!w-[320px] rounded-2xl">
           <img
             src=""
             alt=""
-            loading="lazy"
-            class="h-[380px] w-full rounded-2xl object-cover transition-transform duration-500 hover:scale-105"
+            class="h-auto w-[250px] lg:w-[320px] rounded-2xl"
           />
         </article>
       </template>
 
       <!-- Other sections will be added here -->
+      <!-- ================= OUR SERVICES ================= -->
+      <section
+        class="section service bg-beige grid place-items-center"
+        id="service"
+      >
+        <div
+          class="container grid justify-around gap-10 lg:grid-cols-[450px_450px]"
+        >
+          <div>
+            <h2 class="section-title text-big lg:text-left mb-10">
+              OUR SERVICES
+            </h2>
+            <div class="services-plan flex flex-col gap-2"></div>
+          </div>
+          <div
+            class="service__testimonials swiper w-full bg-primary rounded-2xl text-title shadow-xl lg:-order-1 py-8 px-4"
+          >
+            <div class="container-testimonials swiper-wrapper"></div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= EXPERTS ================= -->
+      <section class="section expert lg:pb-8">
+        <div class="container grid place-items-center gap-20">
+          <div class="mx-14">
+            <h2 class="section-title">MEET OUR BARBERS</h2>
+            <p class="lg:w-137.5 mx-auto text-center">
+              Every barber on our team is committed to providing an exceptional
+              grooming experience, ensuring you leave our shop looking and
+              feeling your best.
+            </p>
+          </div>
+          <div
+            class="grid lg:grid-cols-[262px_262px_262px_262px] md:grid-cols-2 gap-8 items-center justify-center mx-14"
+            id="experts-wrapper"
+          ></div>
+        </div>
+      </section>
+      <!-- ================= CONTACT ================= -->
+      <section class="section px-10" id="contact">
+        <div
+          class="container grid gap-8 lg:grid-cols-[repeat(3,362px)] lg:gap-4 justify-center items-center"
+        >
+          <div
+            class="flex flex-col gap-4 justify-center items-center lg:items-start"
+          >
+            <h2 class="section-title lg:text-left">
+              CONTACT US <br />
+              FOR A HAIRCUT
+            </h2>
+            <p class="text-black text-center lg:text-left lg:mb-15">
+              Contact us for a barber service, find us at our nearest location,
+              or write to us through our social media links and book now.
+            </p>
+            <button class="btn btn-primary btn-lg">Book Via WhatsApp</button>
+          </div>
+          <div class="shadow-xl rounded-4xl bg-white overflow-hidden mx-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.246579850784!2d2.3403924!3d6.4182428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a91115ac469b%3A0x56cac2a9ba7e37f4!2sUAC!5e0!3m2!1sen!2sbj!4v1794819311500!5m2!1sen!2sbj"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="flex flex-col gap-10" id="contact-info">
+            <article
+              class="flex gap-4 border border-x-0 border-t-0 p-2 border-beige-alt"
+            >
+              <div class="bg-black p-4.5 text-primary text-4xl rounded-2xl">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="">LOCATION</h3>
+                <address class="not-italic">
+                  128th Street Avenue, Miraflores, <br />Lima - Peru
+                </address>
+              </div>
+            </article>
+            <article
+              class="flex gap-4 border border-x-0 border-t-0 p-2 border-beige-alt"
+            >
+              <div class="bg-black p-4.5 text-primary text-4xl rounded-2xl">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="">OPERATIONAL</h3>
+                <p
+                  class=""
+                  itemscope
+                  itemtype="https://schema.org/LocalBusiness"
+                >
+                  <span itemprop="openingHours" content="Mo-Sa 09:00-20:00"
+                    >Monday - Saturday: 9am - 8pm</span
+                  >
+                  <span itemprop="openingHours" content="Su 09:00-18:00">
+                    Sunday: 9am - 6pm</span
+                  >
+                </p>
+              </div>
+            </article>
+            <article
+              class="flex gap-4 border border-x-0 border-t-0 p-2 border-beige-alt"
+            >
+              <div class="bg-black p-4.5 text-primary text-4xl rounded-2xl">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="">LOCATION</h3>
+                <address class="not-italic">
+                  <a href=" tel:+1234-9876-00">+1234-9876-00 </a>
+                  <a href="tel:+00987654321">+00987654321 </a>
+                </address>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ================= FOOTER ================= -->
+
+      <!-- Template -->
+      <template id="expertCard">
+        <article
+          class="bg-beige flex lg:flex-col justify-center items-center p-8 rounded-xl shadow-xl"
+        >
+          <img
+            src=""
+            alt=""
+            class="w-40 lg:order-2 lg:w-50 transition-transform hover:scale-[1.2] duration-700"
+          />
+          <div class="flex flex-col lg:flex-row gap-9">
+            <div class="text-title text-lg mb-9">
+              <h3 class="name"></h3>
+              <p class="job"></p>
+            </div>
+            <div class="flex text-xl lg:flex-col gap-1">
+              <a href="www.linkedin.com" class="">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="www.instagram.com">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="www.facebook.com">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </template>
+      <template id="serviceRow">
+        <div
+          class="service-row flex justify-between border border-x-0 border-t-0 pb-3 border-b-beige-alt text-title"
+        >
+          <p class="text"></p>
+          <p class="price"></p>
+        </div>
+      </template>
+      <template id="serviceTestimonials"
+        ><article class="service__testimonial swiper-slide p-10">
+          <p class="mb-24"></p>
+          <h3 class="text-black fixed bottom-9.5"></h3>
+        </article>
+      </template>
     </main>
+
+    <footer class="footer relative section px-10">
+      <div
+        class="footer__container container lg:grid grid-cols-[300px_740px] gap-10"
+      >
+        <div class="flex flex-col gap-2">
+          <a href="" class="font-display text-xl text-title font-semibold"
+            >BARBERSHOP</a
+          >
+          <p class="mb-8 text-lg text-title">
+            Where your haircut style <br />
+            becomes tradition.
+          </p>
+          <address class="not-italic text-title">
+            <a href=" mailto:barbershop@email.com"> barbershop@email.com </a>
+          </address>
+        </div>
+        <div class="flex text-lg justify-between gap-x-48">
+          <div>
+            <h3 class="footer__title">Menu</h3>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="#home"
+                  class="transition-colors hover:text-primary duration-150"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="transition-colors hover:text-primary duration-150"
+                  >About us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#work"
+                  class="transition-colors hover:text-primary duration-150"
+                  >Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#service"
+                  class="transition-colors hover:text-primary duration-150"
+                  >Services</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Write to us</h3>
+            <ul class="">
+              <li>
+                <a
+                  href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
+                  target="_blank"
+                  class="transition-colors hover:text-primary duration-150"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://m.me/bedimcode"
+                  class="transition-colors hover:text-primary duration-150"
+                  target="_blank"
+                  >Messenger</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://web.telegram.org"
+                  class="transition-colors hover:text-primary duration-150"
+                  target="_blank"
+                >
+                  Telegram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:barbershop@email.com"
+                  class="transition-colors hover:text-primary duration-150"
+                  target="_blank"
+                  >Gmail</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Social</h3>
+            <ul class="flex flex-row gap-4">
+              <li>
+                <a
+                  href="https://www.facebook.com/bedimcode"
+                  target="_blank"
+                  class="transition-colors hover:text-primary duration-150"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/bedimcode/"
+                  target="_blank"
+                  class="transition-colors hover:text-primary duration-150"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://x.com/bedimcode/"
+                  target="_blank"
+                  class="transition-colors hover:text-primary duration-150"
+                  ><i class="fa-brands fa-x"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@Bedimcode/"
+                  target="_blank"
+                  class="transition-colors hover:text-primary duration-150"
+                >
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <small class="block mt-24"
+          >&#169; All Rights Reserved By Bedimcode</small
+        >
+      </div>
+      <a
+        href="#"
+        class="fixed bottom-12 right-12 bg-primary h-8 w-8 items-center justify-center transition-colors duration-200 shadow-md text-title hover:bg-white rounded-[50%]"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </footer>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

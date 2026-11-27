@@ -1,15 +1,12 @@
-
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 
 import { createTemplate } from "./function.js";
 
-
 // ================= SELECTORS =================
 
 const workSwiper = document.querySelector(".work__swiper");
 const workSwiperWrapper = workSwiper?.querySelector(".swiper-wrapper");
-
 
 // ================= SLIDES DATA =================
 
@@ -56,18 +53,15 @@ const slides = [
   },
 ];
 
-
 // ================= GENERATE SLIDES =================
 
 function generateSlides() {
-
   if (!workSwiperWrapper) {
     console.error("Swiper wrapper introuvable.");
     return false;
   }
 
   slides.forEach((slide) => {
-
     // Clone the HTML template
     const element = createTemplate("slide-exemple");
 
@@ -81,17 +75,14 @@ function generateSlides() {
 
     // Insert the slide into Swiper
     workSwiperWrapper.append(element);
-
   });
 
   return true;
 }
 
-
 // ================= INITIALIZE SWIPER =================
 
 export function initWorkSwiper() {
-
   if (!workSwiper || !workSwiperWrapper) {
     console.error("Impossible d'initialiser le carrousel.");
     return;
@@ -100,55 +91,23 @@ export function initWorkSwiper() {
   // Generate slides before initializing Swiper
   if (!generateSlides()) return;
 
-  const swiper = new Swiper(workSwiper, {
-
-    // Required modules
-    modules: [Navigation, Pagination],
-
-    // Basic configuration
-    slidesPerView: 1.15,
-    spaceBetween: 20,
+  const swiperWork = new Swiper(".work__swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 24,
     grabCursor: true,
-    speed: 600,
-
-    // Navigation arrows
-    navigation: {
-      nextEl: "#work-next",
-      prevEl: "#work-prev",
-    },
-
-    // Pagination
+    modules: [Navigation, Pagination],
     pagination: {
-      el: "#work-pagination",
-      clickable: true,
+      el: ".work__data .swiper-pagination",
+      type: "fraction",
     },
 
-    // Responsive configuration
-    breakpoints: {
-
-      540: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-
-      768: {
-        slidesPerView: 2.5,
-        spaceBetween: 24,
-      },
-
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 24,
-      },
-
-      1280: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-
+    navigation: {
+      nextEl: ".work__data .swiper-button-next",
+      prevEl: ".work__data .swiper-button-prev",
     },
-
   });
+  // Responsive configuration
 
-  return swiper;
+  return swiperWork;
 }

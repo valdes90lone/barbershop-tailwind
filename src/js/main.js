@@ -1,46 +1,48 @@
 
-import "../style.css";
+/* ==================================================
+   1. IMPORTS CSS
+================================================== */
 
-// Font Awesome
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-// Swiper CSS
+// CSS de Swiper
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// GSAP
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// CSS Font Awesome
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Project modules
-import "./nav.js";
-import { initWorkSwiper } from "./work-swiper.js";
-
-
-// ================= GSAP =================
-
-gsap.registerPlugin(ScrollTrigger);
+// CSS principal du projet
+// Important : le CSS personnalisé vient après celui de Swiper.
+import "../style.css";
 
 
-// ================= HERO ANIMATION =================
 
-const heroContent = document.querySelector("#hero-content");
+/* ==================================================
+   2. IMPORTS JAVASCRIPT
+================================================== */
 
-if (heroContent) {
+// Services et témoignages
+import { initSwiperTestimonials } from "./service-swiper.js";
+import { initWorkSwiper } from "../js/work-swiper.js";
 
-  gsap.from(heroContent.children, {
-    opacity: 0,
-    y: 35,
-    duration: 1,
-    stagger: 0.2,
-    ease: "power3.out",
-    delay: 0.2,
-  });
+// Ajoute ici tes autres imports de modules
+// Exemple :
+// import "./nav.js";
+// import "./work-swiper.js";
+import "../js/nav.js"
+import "../js/function.js"
+import "../js/service-swiper.js"
+import "../js/work-swiper.js"
+import "../js/expert.js"
 
-}
 
+/* ==================================================
+   3. INITIALISATION
+================================================== */
 
-// ================= WORK SWIPER =================
+// Le script étant un module ES, il est exécuté après
+// l'analyse du HTML par le navigateur.
+initWorkSwiper()
+initSwiperTestimonials();
 
-initWorkSwiper();
+// Ajoute ici les autres initialisations nécessaires.
