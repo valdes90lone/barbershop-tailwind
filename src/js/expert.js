@@ -9,7 +9,7 @@ const EXPERTSDATA = [
   },
   {
     name: "Max Pell",
-    job: "Max Pell",
+    job: "Senior Stylist",
     src: "/assets/img/expert-img-2.png",
   },
   {

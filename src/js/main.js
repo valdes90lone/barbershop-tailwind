@@ -34,6 +34,7 @@ import "../js/function.js"
 import "../js/service-swiper.js"
 import "../js/work-swiper.js"
 import "../js/expert.js"
+import { initAnimations } from "./animations.js";
 
 
 /* ==================================================
@@ -45,4 +46,5 @@ import "../js/expert.js"
 initWorkSwiper()
 initSwiperTestimonials();
 
-// Ajoute ici les autres initialisations nécessaires.
+// Animations GSAP + ScrollTrigger (après la génération du contenu dynamique)
+initAnimations();

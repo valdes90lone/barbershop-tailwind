@@ -1,4 +1,4 @@
-import { createTemplate } from "./function";
+import { createTemplate } from "./function.js";
 import { Navigation, Pagination } from "swiper/modules";
 import Swiper from "swiper";
 const servicePlan = document.querySelector(".services-plan");
