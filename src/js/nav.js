@@ -50,11 +50,19 @@ links.forEach((link, index) => {
 
 // ================= MOBILE MENU =================
 
+// Mobile only: the closed off-canvas menu must not stay focusable
+const mobileQuery = window.matchMedia("(width < 1150px)");
+
+function syncMenuAccessibility(isOpen) {
+  navMenu.inert = mobileQuery.matches && !isOpen;
+}
+
 function openMenu() {
   navMenu.classList.remove("translate-x-full");
   navMenu.classList.add("translate-x-0");
 
   navToggle.setAttribute("aria-expanded", "true");
+  syncMenuAccessibility(true);
 }
 
 function closeMenu() {
@@ -62,7 +70,11 @@ function closeMenu() {
   navMenu.classList.add("translate-x-full");
 
   navToggle.setAttribute("aria-expanded", "false");
+  syncMenuAccessibility(false);
 }
+
+// Initial state
+closeMenu();
 
 
 // Open menu
@@ -136,3 +148,44 @@ window.addEventListener("scroll", handleHeaderScroll);
 
 // Initial state
 handleHeaderScroll();
+
+
+// ================= ACTIVE LINK ON SCROLL =================
+
+const sections = document.querySelectorAll("main section[id]");
+const sectionLinks = [...navContainer.querySelectorAll(".nav-link:not(.nav-cta)")];
+
+function updateActiveLink() {
+  const scrollY = window.scrollY;
+  let currentId = sections[0]?.id;
+
+  sections.forEach((section) => {
+    // Same 80px offset as the original script
+    if (scrollY >= section.offsetTop - 80) {
+      currentId = section.id;
+    }
+  });
+
+  sectionLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${currentId}`);
+  });
+}
+
+window.addEventListener("scroll", updateActiveLink, { passive: true });
+updateActiveLink();
+
+
+// ================= BACK TO TOP =================
+
+const scrollUpButton = document.getElementById("scroll-up");
+
+function toggleScrollUp() {
+  const isVisible = window.scrollY >= 350;
+
+  scrollUpButton.classList.toggle("opacity-0", !isVisible);
+  scrollUpButton.classList.toggle("translate-y-16", !isVisible);
+  scrollUpButton.classList.toggle("pointer-events-none", !isVisible);
+}
+
+window.addEventListener("scroll", toggleScrollUp, { passive: true });
+toggleScrollUp();

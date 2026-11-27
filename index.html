@@ -15,6 +15,17 @@
       type="image/x-icon"
     />
 
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / social sharing (same text as the page metadata) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Professional Barber Shop" />
+    <meta
+      property="og:description"
+      content="Professional barbershop specializing in modern and classic haircuts, fades, and beard trims."
+    />
+    <meta property="og:locale" content="en_US" />
+
     <title>Professional Barber Shop</title>
   </head>
 
@@ -88,12 +99,12 @@
           src="/assets/img/home-bg.png"
           alt=""
           aria-hidden="true"
-          class="absolute inset-0 h-full w-full object-cover object-center"
+          class="hero-bg absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <!-- Dark overlay -->
         <div
-          class="absolute inset-0 bg-linear-to-r from-black/90 via-black/65 to-black/25"
+          class="hero-shadow absolute inset-0"
         ></div>
 
         <!-- Hero content -->
@@ -104,12 +115,14 @@
             <!-- Brand logo -->
             <img
               src="/assets/img/home-logo.svg"
+              id="hero-logo"
               alt="Barbershop"
               class="mx-auto mb-5 w-[120px] lg:w-[150px]"
             />
 
             <!-- Main heading -->
             <h1
+              id="hero-title"
               class="font-display text-biggest font-bold leading-tight text-white"
             >
               HAIRCUT AND BEARD
@@ -119,6 +132,7 @@
 
             <!-- Description -->
             <p
+              id="hero-text"
               class="mx-auto my-6 max-w-2xl text-normal leading-relaxed text-white/90 lg:my-8"
             >
               Barbershop specializing in haircuts, fades, classic shaves, and
@@ -130,6 +144,7 @@
             <!-- CTA -->
             <a
               href="#work"
+              id="hero-cta"
               class="btn btn-primary border-0 px-8 text-base font-semibold text-title hover:-translate-y-1 hover:bg-brand-orange-alt"
             >
               See Our Haircut Work
@@ -146,7 +161,7 @@
           class="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-[450px] lg:grid-cols-2 md:items-center md:justify-center lg:gap-16"
         >
           <!-- About content -->
-          <div class="flex flex-col gap-8 text-white">
+          <div class="about-data flex flex-col gap-8 text-white">
             <h2
               class="section-title text-biggest text-white uppercase lg:text-left"
             >
@@ -182,7 +197,7 @@
             >
               <div class="text-primary">
                 <span class="font-display text-big font-semibold">
-                  99<span>%</span>
+                  <span data-counter>99</span><span>%</span>
                 </span>
 
                 <p class="text-sm font-semibold text-white">
@@ -193,7 +208,7 @@
 
               <div class="text-primary">
                 <span class="font-display text-big font-semibold">
-                  7<span>+</span>
+                  <span data-counter>7</span><span>+</span>
                 </span>
 
                 <p class="text-sm font-semibold text-white">
@@ -209,7 +224,9 @@
             src="/assets/img/about-img.png"
             alt="Professional barber working in the BARBERSHOP salon"
             loading="lazy"
-            class="my-5 w-80 justify-self-center rounded-2xl object-cover lg:order-first lg:w-full"
+            width="800"
+            height="988"
+            class="about-img my-5 w-80 justify-self-center rounded-2xl object-cover lg:order-first lg:w-full"
           />
         </div>
       </section>
@@ -257,6 +274,9 @@
           <img
             src=""
             alt=""
+            loading="lazy"
+            width="600"
+            height="764"
             class="h-auto w-[250px] lg:w-[320px] rounded-2xl"
           />
         </article>
@@ -299,7 +319,7 @@
         <div class="container grid place-items-center gap-20">
           <div class="mx-14">
             <h2 class="section-title">MEET OUR BARBERS</h2>
-            <p class="lg:w-137.5 mx-auto text-center">
+            <p class="expert-description lg:w-137.5 mx-auto text-center">
               Every barber on our team is committed to providing an exceptional
               grooming experience, ensuring you leave our shop looking and
               feeling your best.
@@ -323,18 +343,26 @@
               CONTACT US <br />
               FOR A HAIRCUT
             </h2>
-            <p class="text-black text-center lg:text-left lg:mb-15">
+            <p class="contact-description text-black text-center lg:text-left lg:mb-15">
               Contact us for a barber service, find us at our nearest location,
               or write to us through our social media links and book now.
             </p>
-            <button class="btn btn-primary btn-lg">Book Via WhatsApp</button>
+            <a
+              id="contact-book"
+              href="https://api.whatsapp.com/send?phone=51123456789&amp;text=Hello%2C%20more%20information!"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary btn-lg"
+              >Book Via WhatsApp</a
+            >
           </div>
-          <div class="shadow-xl rounded-4xl bg-white overflow-hidden mx-4">
+          <div class="contact-map shadow-xl rounded-4xl bg-white overflow-hidden mx-4">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.246579850784!2d2.3403924!3d6.4182428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a91115ac469b%3A0x56cac2a9ba7e37f4!2sUAC!5e0!3m2!1sen!2sbj!4v1794819311500!5m2!1sen!2sbj"
               width="600"
               height="450"
               style="border: 0"
+              title="Map showing the BARBERSHOP location"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -383,10 +411,10 @@
                 <i class="fa-solid fa-phone"></i>
               </div>
               <div class="flex flex-col gap-1.5">
-                <h3 class="">LOCATION</h3>
+                <h3 class="">CALL US AND BOOK</h3>
                 <address class="not-italic">
-                  <a href=" tel:+1234-9876-00">+1234-9876-00 </a>
-                  <a href="tel:+00987654321">+00987654321 </a>
+                  <a href="tel:+1234987600">+1234-9876-00</a>
+                  <a href="tel:+00987654321">+00987654321</a>
                 </address>
               </div>
             </article>
@@ -398,11 +426,14 @@
       <!-- Template -->
       <template id="expertCard">
         <article
-          class="bg-beige flex lg:flex-col justify-center items-center p-8 rounded-xl shadow-xl"
+          class="expert-card bg-beige flex lg:flex-col justify-center items-center p-8 rounded-xl shadow-xl"
         >
           <img
             src=""
             alt=""
+            loading="lazy"
+            width="600"
+            height="821"
             class="w-40 lg:order-2 lg:w-50 transition-transform hover:scale-[1.2] duration-700"
           />
           <div class="flex flex-col lg:flex-row gap-9">
@@ -411,13 +442,13 @@
               <p class="job"></p>
             </div>
             <div class="flex text-xl lg:flex-col gap-1">
-              <a href="www.linkedin.com" class="">
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin"></i>
               </a>
-              <a href="www.instagram.com">
+              <a href="https://www.instagram.com/" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="www.facebook.com">
+              <a href="https://www.facebook.com/" aria-label="Facebook">
                 <i class="fa-brands fa-facebook"></i>
               </a>
             </div>
@@ -434,18 +465,18 @@
       </template>
       <template id="serviceTestimonials"
         ><article class="service__testimonial swiper-slide p-10">
-          <p class="mb-24"></p>
-          <h3 class="text-black fixed bottom-9.5"></h3>
+          <p class="mb-24 lg:mb-36"></p>
+          <h3 class="text-black"></h3>
         </article>
       </template>
     </main>
 
     <footer class="footer relative section px-10">
       <div
-        class="footer__container container lg:grid grid-cols-[300px_740px] gap-10"
+        class="footer-container footer__container container lg:grid grid-cols-[300px_740px] gap-10"
       >
         <div class="flex flex-col gap-2">
-          <a href="" class="font-display text-xl text-title font-semibold"
+          <a href="#home" class="font-display text-xl text-title font-semibold"
             >BARBERSHOP</a
           >
           <p class="mb-8 text-lg text-title">
@@ -453,7 +484,7 @@
             becomes tradition.
           </p>
           <address class="not-italic text-title">
-            <a href=" mailto:barbershop@email.com"> barbershop@email.com </a>
+            <a href="mailto:barbershop@email.com">barbershop@email.com</a>
           </address>
         </div>
         <div class="flex text-lg justify-between gap-x-48">
@@ -535,7 +566,7 @@
             <ul class="flex flex-row gap-4">
               <li>
                 <a
-                  href="https://www.facebook.com/bedimcode"
+                  href="https://www.facebook.com/bedimcode" aria-label="Facebook"
                   target="_blank"
                   class="transition-colors hover:text-primary duration-150"
                   ><i class="fa-brands fa-facebook"></i
@@ -543,7 +574,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/bedimcode/"
+                  href="https://www.instagram.com/bedimcode/" aria-label="Instagram"
                   target="_blank"
                   class="transition-colors hover:text-primary duration-150"
                   ><i class="fa-brands fa-instagram"></i
@@ -551,7 +582,7 @@
               </li>
               <li>
                 <a
-                  href="https://x.com/bedimcode/"
+                  href="https://x.com/bedimcode/" aria-label="X"
                   target="_blank"
                   class="transition-colors hover:text-primary duration-150"
                   ><i class="fa-brands fa-x"></i
@@ -559,7 +590,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.youtube.com/@Bedimcode/"
+                  href="https://www.youtube.com/@Bedimcode/" aria-label="YouTube"
                   target="_blank"
                   class="transition-colors hover:text-primary duration-150"
                 >
@@ -575,7 +606,9 @@
       </div>
       <a
         href="#"
-        class="fixed bottom-12 right-12 bg-primary h-8 w-8 items-center justify-center transition-colors duration-200 shadow-md text-title hover:bg-white rounded-[50%]"
+        id="scroll-up"
+        aria-label="Back to top"
+        class="fixed bottom-12 right-4 inline-flex bg-primary h-8 w-8 items-center justify-center transition-all duration-500 shadow-md text-title hover:bg-white rounded-[50%]"
       >
         <i class="fa-solid fa-arrow-up"></i>
       </a>
